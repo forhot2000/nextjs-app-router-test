@@ -1,12 +1,5 @@
-import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
 export default function Page() {
-  return (
-    <>
-      <div>admin</div>
-      <div>
-        <Link href='/'>return home</Link>
-      </div>
-    </>
-  );
+  redirect('/admin/classes');
 }

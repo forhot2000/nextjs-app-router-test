@@ -1,3 +1,5 @@
+import 'server-only';
+
 import { delay } from './delay';
 
 export const dataProvider = {

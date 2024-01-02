@@ -14,7 +14,7 @@ body {
 }
 
 .layout-top {
-  background-color: #4f81df;
+  background-color: #659afc;
   height: 180px;
 }
 
@@ -30,13 +30,13 @@ body {
 }
 
 .layout-content {
-  background-color: #eb8282;
+  background-color: #efebba;
   flex: 1;
   min-height: 300px;
 }
 
 .accordion-handler {
-  background-color: #8a8a8a;
+  background-color: #b5cdfb;
   cursor: pointer;
   padding: 5px;
 }
@@ -46,5 +46,12 @@ body {
 }
 
 .accordion-panel {
-  margin: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+.debug {
+  color: #4f4f4f;
+  font-size: x-small;
+  font-style: italic;
 }
