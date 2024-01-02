@@ -6,13 +6,13 @@ import { BannerMenu } from './BannerMenu';
 import { ClassList } from './ClassList';
 import { MaterialTree } from './MaterialTree';
 
-export function LeftNavMenu({ classesData }: { classesData: any[] }) {
+export function LeftNavMenu() {
   const path = usePathname();
   return (
     <>
       <AccordionMenu defaultSelectedKey={path}>
         <AccordionMenu.Item key='/admin/classes' title='classes'>
-          <ClassList data={classesData} />
+          <ClassList />
         </AccordionMenu.Item>
         <AccordionMenu.Item key='/admin/material' title='material'>
           <MaterialTree />
