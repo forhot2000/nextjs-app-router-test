@@ -5,7 +5,7 @@ export default function Page() {
     <>
       <div>banner</div>
       <div>
-        <Link href='/'>return home</Link>
+        <Link href='/admin'>return admin</Link>
       </div>
     </>
   );

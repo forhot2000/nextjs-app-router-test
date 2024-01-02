@@ -1,8 +1,6 @@
 body {
   display: flex;
   margin: 0;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .layout {
@@ -20,6 +18,12 @@ body {
   height: 180px;
 }
 
+.layout-bottom {
+  background-color: #a2a2a2;
+  text-align: center;
+  padding: 10px;
+}
+
 .layout-left {
   background-color: #8eebcc;
   width: 280px;
@@ -28,4 +32,5 @@ body {
 .layout-content {
   background-color: #eb8282;
   flex: 1;
+  min-height: 300px;
 }
