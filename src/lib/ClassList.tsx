@@ -1,14 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect } from 'react';
-import useSWR from 'swr';
-import { delay } from './delay';
+import { useEffect, useMemo } from 'react';
+import { dataProvider } from './dataProvider';
+import { useSWR } from './swr';
 import { useToast } from './useToast';
 
 export function ClassList() {
-  const { data, error, isLoading } = useSWR('/api/classes', fetcher);
   const { showError } = useToast();
+  const { data: res, error, isLoading: isPending } = useSWR('getCollections', () => dataProvider.getCollections());
+  const data = useMemo(() => res?.data || [], [res]);
 
   useEffect(() => {
     if (error) {
@@ -16,13 +17,13 @@ export function ClassList() {
     }
   }, [showError, error]);
 
-  if (isLoading) {
+  if (isPending) {
     return 'Loading...';
   }
 
   return (
     <div>
-      {data && data.length
+      {data.length
         ? data.map((item) => {
             const key = `/admin/classes/${item.name}`;
             return (
@@ -35,14 +36,3 @@ export function ClassList() {
     </div>
   );
 }
-
-const fetcher = async (key: any) => {
-  console.log('fetch:', key);
-  await delay(1000);
-  // throw new Error('something wrong!');
-  return [
-    { id: 1, name: 'users' },
-    { id: 2, name: 'roles' },
-    { id: 3, name: 'orgs' },
-  ];
-};

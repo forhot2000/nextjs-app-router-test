@@ -1,5 +1,5 @@
-import { dataProvider } from '@/lib/dataProvider';
 import { DataTable } from '@/lib/DataTable';
+import { dataProvider } from '@/lib/dataProvider';
 
 const columns = ['id', 'name'];
 
