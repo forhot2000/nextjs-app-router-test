@@ -1,5 +1,5 @@
 {
-  "name": "server-render-test",
+  "name": "nextjs-app-router-test",
   "version": "0.1.0",
   "private": true,
   "scripts": {
