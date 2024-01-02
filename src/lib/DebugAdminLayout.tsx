@@ -1,30 +1,24 @@
 import Link from 'next/link';
 
+const data = [
+  { href: '/admin/classes/xxx', title: 'classes xxx' },
+  { href: '/admin/classes', title: 'classes' },
+  { href: '/admin/material/xxx', title: 'material xxx' },
+  { href: '/admin/material', title: 'material' },
+  { href: '/admin/yyy/xxx', title: 'yyy/xxx' },
+  { href: '/admin/xxx', title: 'xxx' },
+  { href: '/admin', title: 'admin' },
+];
+
 export function DebugAdminLayout() {
   return (
     <div className='debug'>
       <ul>
-        <li>
-          <Link href='/admin/classes/xxx'>classes xxx</Link>
-        </li>
-        <li>
-          <Link href='/admin/classes'>classes</Link>
-        </li>
-        <li>
-          <Link href='/admin/material/xxx'>material xxx</Link>
-        </li>
-        <li>
-          <Link href='/admin/material'>material</Link>
-        </li>
-        <li>
-          <Link href='/admin/yyy/xxx'>yyy/xxx</Link>
-        </li>
-        <li>
-          <Link href='/admin/xxx'>xxx</Link>
-        </li>
-        <li>
-          <Link href='/admin'>admin</Link>
-        </li>
+        {data.map((item) => (
+          <li key={item.href}>
+            <Link href={item.href}>{item.title}</Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
