@@ -4,20 +4,20 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { ReactElement, useState } from 'react';
 
-export function LeftNavMenu() {
+export function LeftNavMenu({ classesData }: { classesData: any[] }) {
   const path = usePathname();
   return (
     <>
       <AccordionMenu defaultSelectedKey={path}>
-        <AccordionMenuItem key='/admin/classes' title='classes'>
+        <AccordionMenu.Item key='/admin/classes' title='classes'>
+          <ClassList data={classesData} />
+        </AccordionMenu.Item>
+        <AccordionMenu.Item key='/admin/material' title='material'>
           <div>---</div>
-        </AccordionMenuItem>
-        <AccordionMenuItem key='/admin/material' title='material'>
+        </AccordionMenu.Item>
+        <AccordionMenu.Item key='/admin/banner' title='banner'>
           <div>---</div>
-        </AccordionMenuItem>
-        <AccordionMenuItem key='/admin/banner' title='banner'>
-          <div>---</div>
-        </AccordionMenuItem>
+        </AccordionMenu.Item>
       </AccordionMenu>
     </>
   );
@@ -46,6 +46,16 @@ function AccordionMenu({ children, defaultSelectedKey }: { children: React.React
   );
 }
 
-function AccordionMenuItem(props: React.PropsWithChildren<{ title: string }>) {
+AccordionMenu.Item = function AccordionMenuItem(props: React.PropsWithChildren<{ title: string }>) {
   return null;
+};
+
+function ClassList({ data }: { data: any[] }) {
+  return (
+    <div>
+      {data.map((item) => (
+        <div key={item.id}>{item.name}</div>
+      ))}
+    </div>
+  );
 }
