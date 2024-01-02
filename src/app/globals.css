@@ -34,3 +34,17 @@ body {
   flex: 1;
   min-height: 300px;
 }
+
+.accordion-handler {
+  background-color: #8a8a8a;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.accordion-handler a:hover {
+  font-weight: bold;
+}
+
+.accordion-panel {
+  margin: 10px;
+}

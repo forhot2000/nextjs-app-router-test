@@ -35,8 +35,10 @@ function AccordionMenu({ children, defaultSelectedKey }: { children: React.React
         const item = { key: element.key!, title: element.props.title, children: element.props.children };
         return (
           <div key={item.key}>
-            <div onClick={() => setSelectedKey(item.key)}>{item.title}</div>
-            {isSelected(item.key) ? <div>{item.children}</div> : null}
+            <div className='accordion-handler' onClick={() => setSelectedKey(item.key)}>
+              <Link href={item.key}>{item.title}</Link>
+            </div>
+            {isSelected(item.key) ? <div className='accordion-panel'>{item.children}</div> : null}
           </div>
         );
       })}
