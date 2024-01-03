@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { useEffect, useMemo } from 'react';
-import { dataProvider } from './dataProvider';
-import { useSWR } from './swr';
-import { useToast } from './useToast';
+import { dataProvider } from '../lib/dataProvider';
+import useSWR from '../lib/swr';
+import { useToast } from '../lib/useToast';
 
 export function ClassList() {
   const { showError } = useToast();

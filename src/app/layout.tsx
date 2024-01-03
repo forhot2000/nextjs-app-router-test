@@ -1,5 +1,5 @@
-import { Footer } from '@/lib/Footer';
-import { HeadNav } from '@/lib/HeadNav';
+import { Footer } from '@/components/Footer';
+import { HeadNav } from '@/components/HeadNav';
 import './globals.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

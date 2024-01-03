@@ -1,4 +1,4 @@
-import { DataTable } from '@/lib/DataTable';
+import { DataTable } from '@/components/DataTable';
 import { dataProvider } from '@/lib/dataProvider';
 
 const columns = ['id', 'name'];

@@ -1,6 +1,6 @@
 import useSWR_1, { BareFetcher, SWRHook } from 'swr';
 
-export const useSWR: typeof useSWR_1 = (key: any, fn?: any, opts?: any) => {
+const useSWR: typeof useSWR_1 = (key: any, fn?: any, opts?: any) => {
   return useSWR_1(key, fn, {
     ...opts,
     use: [logger],
@@ -19,3 +19,5 @@ function logger(useSWRNext: SWRHook) {
     return useSWRNext(key, extendedFetcher, config);
   };
 }
+
+export default useSWR;

@@ -1,6 +1,6 @@
-import { DebugAdminLayout } from '@/lib/DebugAdminLayout';
-import { DebugRender } from '@/lib/DebugRender';
-import { LeftNav } from '@/lib/LeftNav';
+import { DebugAdminLayout } from '@/components/DebugAdminLayout';
+import { DebugRender } from '@/components/DebugRender';
+import { LeftNav } from '@/components/LeftNav';
 import { Suspense } from 'react';
 import Loading from './loading';
 

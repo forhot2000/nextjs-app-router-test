@@ -1,5 +1,5 @@
 import { HeadNavMenu } from './HeadNavMenu';
-import { delay } from './delay';
+import { delay } from '../lib/delay';
 
 export async function HeadNav() {
   const links = await getHeadNavData();
