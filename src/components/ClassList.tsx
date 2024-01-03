@@ -8,7 +8,7 @@ import { useToast } from '../lib/useToast';
 
 export function ClassList() {
   const { showError } = useToast();
-  const { data: res, error, isLoading: isPending } = useSWR('getCollections', () => dataProvider.getCollections());
+  const { data: res, error, isLoading } = useSWR('getCollections', () => dataProvider.getCollections());
   const data = useMemo(() => res?.data || [], [res]);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export function ClassList() {
     }
   }, [showError, error]);
 
-  if (isPending) {
+  if (isLoading) {
     return 'Loading...';
   }
 
